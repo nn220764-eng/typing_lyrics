@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タイピング劇場 歌詞検索</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>タイピング劇場 歌詞検索</h1>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <div class="search-box">
+                <input type="number" id="search-input" placeholder="曲番号で検索">
+            </div>
+        </div>
+
+        <div id="result-container">
+            <div id="lyrics-controls" class="hidden">
+                <div class="control-group">
+                    <span>文字</span>
+                    <button id="font-decrease-btn" title="文字を小さく">-</button>
+                    <button id="font-increase-btn" title="文字を大きく">+</button>
+                </div>
+                <div class="font-size-control">
+                    <span>分割</span>
+                    <button id="column-decrease-btn" title="分割を減らす">-</button>
+                    <button id="column-increase-btn" title="分割を増やす">+</button>
+                </div>
+            </div>
+            <h2>検索結果</h2>
+            <div id="result">
+                <p>ここに検索結果が表示されます。</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

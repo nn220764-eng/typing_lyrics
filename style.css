@@ -1,0 +1,160 @@
+body {
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+    line-height: 1.6;
+    margin: 0; /* ページの余白をなくす */
+    background-color: #f4f4f4; /* 白背景 */
+    color: #333; /* 黒文字 */
+    height: 100vh; /* 画面の高さいっぱいに表示 */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* 残りの高さをすべて使用 */
+    padding: 10px;
+    gap: 10px; /* 要素間のスペース */
+}
+
+header {
+    text-align: center;
+    padding: 10px 0;
+    flex-shrink: 0; /* 縮まないようにする */
+}
+
+h1, h2 {
+    color: #0275d8;
+}
+
+.search-container, #result-container {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.search-container {
+    flex-shrink: 0; /* 縮まないようにする */
+}
+
+.search-box {
+    display: flex;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="number"] {
+    flex-grow: 1; /* 横幅いっぱいに広がる */
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #0275d8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #025aa5;
+}
+
+#result .song {
+    /* 歌詞表示時に画面全体を使うように高さを設定 */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#result .song:last-child {
+    border-bottom: none;
+}
+
+#result h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+#result-container {
+    flex-grow: 1; /* 残りの高さをすべて使用 */
+    display: flex;
+    flex-direction: column;
+    position: relative; /* 高さ計算の基準点として設定 */
+}
+
+#result {
+    height: 100%;
+}
+
+#result .lyrics {
+    background-color: #1e1e1e; /* 黒背景 */
+    color: #e0e0e0; /* 白文字 */
+    padding: 20px;
+    border-radius: 4px;
+    font-size: 0.8em; /* 歌詞のフォントサイズを大きく */
+    /* --- ここからが変更点 --- */
+    flex-grow: 1; /* 残りの高さをすべて使用する */
+    overflow: hidden; /* はみ出した内容は隠す（段組みで表示するため） */
+
+    /* 段組み（マルチカラム）レイアウト */
+    column-count: 1; /* 列の数を1に設定 */
+    column-gap: 40px; /* 列と列の間のスペース */
+    column-rule: 1px solid #555; /* 列の間の区切り線 */
+    height: 100%; /* 親要素の高さに合わせる */
+}
+
+.lyric-block {
+    break-inside: avoid; /* 列の分割を禁止 */
+    line-height: 1.5; /* 行の高さを設定 */
+}
+
+.lyric-block:not(:last-child) {
+    /* ブロック間に点線とスペースを設ける */
+    border-bottom: 1px dotted #666;
+    padding-bottom: 0.75em;
+    margin-bottom: 0.75em;
+}
+
+#lyrics-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* 曲名の下に表示されるようにマージンを追加 */
+    margin-bottom: 10px;
+    /* 中央揃えにする */
+    justify-content: center;
+}
+
+.control-group, .font-size-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: rgba(70, 70, 70, 0.8);
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.control-group span, .font-size-control span {
+    margin-right: 5px;
+}
+
+.control-group button, .font-size-control button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+.hidden {
+    display: none !important;
+}
