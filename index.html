@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タイピング劇場 歌詞検索</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>タイピング劇場 歌詞検索</h1>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <h2>歌詞を検索</h2>
+            <div class="search-box">
+                <label for="song-number">曲番号で検索:</label>
+                <input type="number" id="song-number" placeholder="例: 1">
+                <button id="search-by-number-btn">検索</button>
+            </div>
+            <div class="search-box">
+                <label for="song-title">曲名で検索:</label>
+                <input type="text" id="song-title" placeholder="例: さくら">
+                <button id="search-by-title-btn">検索</button>
+            </div>
+        </div>
+
+        <div id="result-container">
+            <h2>検索結果</h2>
+            <div id="result">
+                <p>ここに検索結果が表示されます。</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
