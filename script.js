@@ -98,21 +98,16 @@ function displayResult(resultSongs) {
     resultDiv.innerHTML = ''; // 結果表示エリアをクリア
 
     const header = document.querySelector('header');
-    const searchContainer = document.querySelector('.search-container');
-    const resultTitle = document.querySelector('#result-container h2');
 
     if (resultSongs.length === 0) {
         resultDiv.innerHTML = '<p>該当する曲が見つかりませんでした。</p>';
         header.classList.remove('hidden');
-        searchContainer.classList.remove('hidden');
-        resultTitle.classList.remove('hidden');
         lyricsControls.classList.add('hidden');
         return;
     }
 
     // 検索結果が見つかったら、コントロールを表示し、デフォルトのテキストを隠す
     header.classList.add('hidden');
-    resultTitle.classList.add('hidden'); // 「検索結果」のh2を隠す
     lyricsControls.classList.remove('hidden');
 
 
