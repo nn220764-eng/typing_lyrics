@@ -156,19 +156,21 @@ button:hover {
     display: flex;
     align-items: center;
     gap: 5px;
-    background-color: rgba(70, 70, 70, 0.8);
-    padding: 5px 10px;
+    padding: 2px 8px;
     border-radius: 20px;
 }
 
 .control-group span, .font-size-control span {
     margin-right: 5px;
+    /* 文字を小さくする */
+    font-size: 0.8em;
 }
 
 .control-group button, .font-size-control button {
-    width: 40px;
-    height: 40px;
-    font-size: 1.5em;
+    /* ボタンを小さくする */
+    width: 28px;
+    height: 28px;
+    font-size: 1.2em;
     line-height: 1;
 }
 
