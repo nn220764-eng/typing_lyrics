@@ -40,5 +40,14 @@
     </main>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('click', (event) => {
+            const searchInput = document.getElementById('search-input');
+            // クリックされた要素が入力要素やボタンでない場合にフォーカスします。
+            if (event.target.tagName !== 'INPUT' && event.target.tagName !== 'BUTTON') {
+                searchInput.focus();
+            }
+        });
+    </script>
 </body>
 </html>
